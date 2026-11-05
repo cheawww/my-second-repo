@@ -12,7 +12,9 @@ def main():
         print(enemy)
     print()
 
-    while hero.is_alive() and any(enemy.is_alive() for enemy in enemies):
+    while hero.is_alive() and (
+        enemies[0].is_alive() or enemies[1].is_alive()
+    ):
         for enemy in enemies:
             if not enemy.is_alive():
                 continue
